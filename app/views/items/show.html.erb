@@ -1,0 +1,53 @@
+<p>
+  <b>User:</b>
+  <%=h @item.user %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%=h @item.category %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%=h @item.location %>
+</p>
+
+<p>
+  <b>Room:</b>
+  <%=h @item.room %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @item.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @item.description %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%=h @item.quantity %>
+</p>
+
+<p>
+  <b>Pickup details:</b>
+  <%=h @item.pickup_details %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @item.status %>
+</p>
+
+<p>
+  <b>Expiration:</b>
+  <%=h @item.expiration %>
+</p>
+
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user: 
+  category: 
+  location: 
+  room: MyString
+  name: MyString
+  description: MyText
+  quantity: 1
+  pickup_details: MyText
+  status: MyString
+  expiration: 2009-10-21 18:44:30
+
+two:
+  user: 
+  category: 
+  location: 
+  room: MyString
+  name: MyString
+  description: MyText
+  quantity: 1
+  pickup_details: MyText
+  status: MyString
+  expiration: 2009-10-21 18:44:30
