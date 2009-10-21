@@ -1,0 +1,10 @@
+log/*.log
+tmp/**/*
+config/database.yml
+db/*.sqlite3
+.tmp_*
+*/.tmp_*
+*/*/.tmp_*
+*/*/*/.tmp_*
+config/webConf.rb
+public/.htaccess
