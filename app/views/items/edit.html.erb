@@ -2,50 +2,13 @@
 
 <% form_for(@item) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.label :user %><br />
-    <%= f.text_field :user %>
-  </p>
-  <p>
-    <%= f.label :category %><br />
-    <%= f.text_field :category %>
-  </p>
-  <p>
-    <%= f.label :location %><br />
-    <%= f.text_field :location %>
-  </p>
-  <p>
-    <%= f.label :room %><br />
-    <%= f.text_field :room %>
-  </p>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :quantity %><br />
-    <%= f.text_field :quantity %>
-  </p>
-  <p>
-    <%= f.label :pickup_details %><br />
-    <%= f.text_area :pickup_details %>
-  </p>
-  <p>
-    <%= f.label :status %><br />
-    <%= f.text_field :status %>
-  </p>
-  <p>
-    <%= f.label :expiration %><br />
-    <%= f.datetime_select :expiration %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+  <table class="edit_win" cellpadding="6" cellspacing="0">
+      <%= render :partial => f %>
+      <tr>
+        <td></td>
+        <td><%= f.submit 'Update' %></td>
+      </tr>
+  </table>
 <% end %>
 
 <%= link_to 'Show', @item %> |

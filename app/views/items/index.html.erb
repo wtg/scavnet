@@ -1,34 +1,48 @@
-<h1>Listing items</h1>
+<div id="titleblock">
+  <%= image_tag 'scavnet_logo.jpg' %><br /><br />
+  <!--<h1>ScavNet</h1>-->
+  <h2>Exchange materials, equipment, and random junk from the lab or the room!</h2><br /><br />
+</div>
+<div id="search_padding">
+  <table cellpadding="6" cellspacing="0" width="100%">
+    <tr>
+      <td class="searchbox" width="45%">
+        <h2>Live Search</h2>
+        <div style="float:left; width:85%">
+          <form action="/scavnet" id="search" method="post"><input autocomplete="off" id="query" name="query" type="text" /> </form>
+        </div>
+        <div style="float:right;text-align:left; width:15%;">
+          <%= link_to_function(image_tag('cancel_sel.gif')) do |page|; page[:query].value = ''; end %>
+        </div>
+      </td>
+      <td class="toplinks" width="55%">
+        <ul>
+          <li><%= link_to 'Add Listing', new_item_path %></li>
+          <li><a href="#">How do I use this junk</a></li>
+          <li><a href="#">Add Location</a></li>
+          <li><a href="#">Add Category</a></li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</div>
 
-<table>
+<table class="scav_listing" cellpadding="0" cellspacing="0" width="100%">
   <tr>
-    <th>User</th>
+    <th>Name</th>
     <th>Category</th>
     <th>Location</th>
     <th>Room</th>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Quantity</th>
-    <th>Pickup details</th>
     <th>Status</th>
-    <th>Expiration</th>
   </tr>
 
 <% @items.each do |item| %>
-  <tr>
-    <td><%=h item.user %></td>
-    <td><%=h item.category %></td>
-    <td><%=h item.location %></td>
+  <tr class="<%= cycle('listing_even', 'listing_odd') %>">
+    <td><%= link_to item.name, item %></td>
+    <td><%=h item.category.name %></td>
+    <td><%=h item.location.name %></td>
     <td><%=h item.room %></td>
-    <td><%=h item.name %></td>
-    <td><%=h item.description %></td>
-    <td><%=h item.quantity %></td>
-    <td><%=h item.pickup_details %></td>
     <td><%=h item.status %></td>
-    <td><%=h item.expiration %></td>
-    <td><%= link_to 'Show', item %></td>
-    <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

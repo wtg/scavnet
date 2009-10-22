@@ -1,53 +1,27 @@
-<p>
-  <b>User:</b>
-  <%=h @item.user %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%=h @item.category %>
-</p>
-
-<p>
-  <b>Location:</b>
-  <%=h @item.location %>
-</p>
-
-<p>
-  <b>Room:</b>
-  <%=h @item.room %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%=h @item.name %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%=h @item.description %>
-</p>
-
-<p>
-  <b>Quantity:</b>
-  <%=h @item.quantity %>
-</p>
-
-<p>
-  <b>Pickup details:</b>
-  <%=h @item.pickup_details %>
-</p>
-
-<p>
-  <b>Status:</b>
-  <%=h @item.status %>
-</p>
-
-<p>
-  <b>Expiration:</b>
-  <%=h @item.expiration %>
-</p>
-
-
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<div class="item_header"> 
+  <div class="item_header_padding"> 
+    <h1><%= @item.name %> <span style="color:#cccccc; font-size:0.6em; font-weight:normal;">@</span> <%= @item.location.name %></h1> 
+  </div> 
+</div> 
+<div class="header_sub"> 
+ 
+<%= link_to 'Edit', edit_item_path(@item) %>
+ 
+ 
+</div> 
+<div class="indent_1"> 
+  <div class="img_insert"> 
+  </div>
+  <br />
+  <br />
+  <h6>Description:</h6> 
+  <p><%=h @item.description %></p> 
+  <h6>Pick-up Details:</h6> 
+  <p><%=h @item.pickup_details %></p> 
+  <h6>Current Status: <span class="status"><%= @item.status %></span></h6> 
+  <h6>Contact E-mail: <span class="contact"><%= mail_to @item.user.email, nil, :replace_at => " AT ", :replace_dot => " DOT " %></span></h6> 
+  <div class="item_footer"> 
+    <div class="item_footer_padding"> 
+      <span class="strong_link"><%= link_to 'Master List', items_path %></span>Filed under <strong><%= @item.category.name %><strong> 
+    </div> 
+  </div> 
