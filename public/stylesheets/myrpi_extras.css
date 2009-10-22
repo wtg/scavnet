@@ -1,0 +1,88 @@
+/* RPI Student Senate myRPI.org Extras CSS
+   Original Design; Designed by Brian R Zaik (www.brzaik.com)
+   Copyright 2008
+*/
+html { height:100%; }
+body { height:100%; margin:0px; }
+body, .minwidth, .container { height:100%; margin:0; min-height:100%; padding:0; }
+* html .minwidth, * html .container  { /* Should be included via Conditional Comment for IE */ height: 100%; }
+
+/* GENERAL STYLES */
+h1, h2, h3, h4, h5, p { font-weight:normal;line-height:normal;margin:0px; padding:0; }
+a { color:#003366; text-decoration:none; }
+a:hover { color:#333333;text-decoration:underline; }
+p { line-height:1.5em;margin:0px 0px 18px 0px; }
+h1, h2, h3, h4, h5 { color:#336699; font-family:Georgia, serif; }
+h1 { font-size:250%;  margin:0px 0px 26px 0px;  padding:0px 0px 0px 0px; }
+h2 { font-size:130%;  margin:18px 0px 18px 0px;  padding:0px 0px 0px 0px; }
+h2 a { color:#666666; }
+h3 { color:#333333; font-size:130%;  margin:0px 0px 12px 0px;  padding:0px 0px 0px 0px; }
+h4 { font-size:90%;   margin:0px 0px 12px 0px;  padding:0px 0px 0px 0px; }
+h5 { font-family:Arial, sans-serif; font-size:110%; font-weight:bold; margin:0px 0px 8px 0px; padding:0px; }
+br { height:1px; line-height:normal; margin:0; padding:0; }
+
+table.admin_listing { color:#FFF; }
+table.admin_listing th { background:#336699; color:FFF; font-size:1em; padding:8px 6px; text-align:left; }
+table.admin_listing th a { color:#FFF; text-decoration:none; }
+table.admin_listing th a:hover { color:#FFF; text-decoration:underline; }
+table.admin_listing td { border-left:solid 1px #cccccc; border-bottom:solid 1px #cccccc; color:#000; padding:5px; }
+table.admin_listing td a { font-size:1.1em; font-weight:bold; }
+table.admin_listing td img { border:0px; }
+table.admin_listing td.lastcol { border-right:solid 1px #cccccc; }
+tr.listing_odd { background:url(../images/frame/lightgray_bg.gif) repeat; }
+tr.listing_even { background:#FFF; }
+
+#maincontainer, #contentwrapper { margin:0; padding:0px }
+#formbody { background:url(../images/form_bg_left.gif) top left repeat-y; height:100%; }
+#formbody_right { background:url(../images/form_bg_right.gif) top right repeat-y; height:100%; }
+
+/* sub_cell
+*/
+#sub_cell { margin-top:20px; margin-left:auto; margin-right:auto; width:800px; }
+#sub_cell_padding { padding:0px 25px; }
+
+/* ISSUE FORM
+   Used for feedback forms */
+#issuebox { background:#cccccc url(../images/frame/lightgray_bg.gif) repeat; border-left:solid 1px #999999; border-right:solid 1px #999999; height:100%; margin-left:auto; margin-right:auto; width:80%; }
+#issuebox_padding { background:url(../images/form_logobg.png) top right no-repeat; padding:25px; }
+#issuebox input, textarea { width:100%; }
+
+table.issue_win { border:solid 1px #66cc66; margin:0px; padding:0px; width:100%; }
+table.issue_win td { background:url(../images/myrpi/form_bg_green.gif) repeat; border-bottom:dashed 1px #66cc66; padding:16px; text-align:left; vertical-align:top; }
+table.issue_win td p { color:#666666; line-height:normal; margin:0px 0px 6px 0px; padding:0px; }
+table.issue_win textarea, table.issue_win .text-input { height:150px; width:100%; }
+table.issue_win input { font-size:180%; }
+td.edit_col { width:70%; }
+td.specinput input { font-size:100%; width:20%; }
+td.publicinput input { background:#ffffcc; border:solid 1px #999999; }
+table.issue_win td.lastrow { border-bottom:none; }
+
+/* Edit forms */
+table.edit_win { background:url(../images/frame/lightgray_bg.gif) repeat; margin:0px; padding:0px; width:100%; }
+table.edit_win td { border:0px; border-bottom:dashed 1px #cccccc; padding:16px; text-align:left; vertical-align:top; }
+table.edit_win td p { color:#666666; line-height:normal; margin:0px 0px 6px 0px; padding:0px; }
+table.edit_win textarea, table.edit_win .text-input { width:100%; }
+td.edit_col { width:70%; }
+
+/* CONTENT_COL
+*/
+#contentcol_padding { padding-left:50px; }
+#contentcol p { font-family:Georgia, serif; font-size:1.4em; margin-bottom:26px; }
+#contentcol a { color:#993333; }
+#contentcol h1 { font-size:200%; margin-bottom:25px; }
+#contentcol h4 { margin-bottom:25px; }
+
+/* RIGHT COLUMN
+   Used for about pages */
+#rightcol { background:url(../images/tan_bg.gif) repeat; border-bottom:1px solid #cc9966; border-left:1px solid #cc9966; border-top:1px solid #cc9966; color:#333333; font-family:Georgia, serif; font-size:125%; margin:20px 0px 40px 40px; width:35%; }
+#rightcol_padding { padding:30px; }
+#rightcol h4 { color:#996633; margin-bottom:12px; }
+#rightcol h4.newsect { margin-top:30px; }
+#rightcol p { color:#333333; line-height:1.75em; margin:0px 0px 8px 0px; }
+#rightcol a { color:#996633; text-decoration:none; }
+#rightcol a:hover { color:#cc9966; text-decoration:underline; }
+
+#footer { background:none; border-top:dotted 1px #999999; clear:both; color:#333; margin:55px 0px 0px 0px; padding:8px 4px; }
+#footer a { color:#006699; text-decoration:none; }
+#footer a:hover { color:#666; text-decoration:underline; }
+

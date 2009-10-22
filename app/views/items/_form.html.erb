@@ -1,0 +1,40 @@
+      <tr>
+        <td><h5><%= form.label :name %><p>Enter a text name for this listing.</p></td>
+        <td class="edit_col"><%= form.text_field :name %></td>
+      </tr>
+      <tr>
+        <td><h5><%= form.label :category_id %></h5><p>Which category most fits what you are trying to list on ScavNet?</p></td>
+        <td><%= form.collection_select :category_id, Category.all, :id, :name %></td>
+      </tr>
+      <tr>
+        <td><h5><%= form.label :description %></h5><p>Enter some basic information about what you would like to list on ScavNet.</p></td>
+        <td><%= form.text_area :description %></td>
+      </tr>
+      <tr>
+        <td><h5><%= form.label :location %></h5><p>Where is your stuff currently located?</p></td>
+        <td><%= form.collection_select :location_id, Location.all, :id, :name %></td>
+      </tr>
+      <tr>
+        <td><h5><%= form.label :room %></h5><p>Optional: In which room is your item currently located?</p></td>
+        <td><%= form.text_field :room %></td>
+      </tr>
+      <tr>
+        <td><h5><%= form.label :pickup_details %></h5><p>How can people pick up your item if they're interested?</p></td>
+        <td><%= form.text_area :pickup_details %></td>
+      </tr>
+      <tr>
+        <td><h5><%= form.label :status %></h5><p>What's the current availibility of the item you are currently listing?</p></td>
+        <td><%= form.text_field :status %></td>
+      <tr>
+      <tr>
+        <td><h5><%= form.label :quantity %></h5><p>How many of this item do you have?</p></td>
+        <td><%= form.text_field :quantity %></td>
+      </tr>
+      <tr>
+        <td><h5><%= form.label :expiration %></h5><p>How long would you like this item to be listed?</p></td>
+        <td><%= form.datetime_select :expiration %></td>
+      </tr>
+      <tr>
+        <td><h5><%= form.label :user_id %></h5><p>Enter a text name for this listing.</p></td>
+        <td><%= form.collection_select :user_id, User.all, :id, :name %></td>
+      </tr>
