@@ -23,8 +23,12 @@
         <td><%= form.text_area :pickup_details %></td>
       </tr>
       <tr>
+        <td><h5><%= form.label :photo %></h5><p>If you have a photo of your item, add it here.</p></td>
+        <td><%= form.file_field :photo %></td>
+      </tr>
+      <tr>
         <td><h5><%= form.label :status %></h5><p>What's the current availibility of the item you are currently listing?</p></td>
-        <td><%= form.text_field :status %></td>
+        <td><%= form.select :status, ["Available","Contact First","Reserved"] %></td>
       <tr>
       <tr>
         <td><h5><%= form.label :quantity %></h5><p>How many of this item do you have?</p></td>
@@ -32,7 +36,7 @@
       </tr>
       <tr>
         <td><h5><%= form.label :expiration %></h5><p>How long would you like this item to be listed?</p></td>
-        <td><%= form.datetime_select :expiration %></td>
+        <td><%= form.date_select :expiration %></td>
       </tr>
       <tr>
         <td><h5><%= form.label :user_id %></h5><p>Enter a text name for this listing.</p></td>

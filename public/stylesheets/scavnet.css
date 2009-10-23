@@ -4,7 +4,8 @@ h2, h3 { font-size:1.5em; }
 a { color:#006699; }
 a:hover { color:#003366; }
 table.scav_listing { color:#FFF; }
-table.scav_listing th { background:#336699; color:FFF; font-size:1.2em; padding:8px 6px; text-align:left; }
+table.scav_listing thead { background:#336699; color:FFF; text-align:left; }
+table.scav_listing th { font-size:1.2em; padding:8px 6px; }
 table.scav_listing th a { color:#FFF; text-decoration:none; }
 table.scav_listing th a:hover { color:#FFF; text-decoration:underline; }
 table.scav_listing td { border-left:solid 1px #cccccc; border-bottom:solid 1px #cccccc; color:#000; padding:5px; }
@@ -51,3 +52,9 @@ table.edit_win td { border:0px; border-bottom:dashed 1px #cccccc; padding:16px; 
 table.edit_win td p { color:#666666; line-height:normal; margin:0px 0px 6px 0px; padding:0px; }
 table.edit_win textarea, table.edit_win .text-input { width:100%; }
 td.edit_col { width:70%; }
+
+/* Sortable Table */
+.sortcol {cursor: pointer; padding-right: 20px; background-repeat: no-repeat; background-position: right center; }
+th.sortasc {background-image: url(../images/up.gif);}
+th.sortdesc {background-image: url(../images/down.gif);}
+.nosort {cursor: default;}

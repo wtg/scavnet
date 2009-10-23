@@ -19,32 +19,43 @@
         <ul>
           <li><%= link_to 'Add Listing', new_item_path %></li>
           <li><a href="#">How do I use this junk</a></li>
-          <li><a href="#">Add Location</a></li>
-          <li><a href="#">Add Category</a></li>
+          <li><%= link_to 'Add Location', new_location_path %></li>
+          <li><%= link_to 'Add Category', new_category_path %></li>
         </ul>
       </td>
     </tr>
   </table>
 </div>
 
-<table class="scav_listing" cellpadding="0" cellspacing="0" width="100%">
+<table class="scav_listing sortable" cellpadding="0" cellspacing="0" width="100%">
+  <thead>
   <tr>
+    <th></th>
     <th>Name</th>
     <th>Category</th>
     <th>Location</th>
     <th>Room</th>
     <th>Status</th>
+    <th></th>
   </tr>
-
+ </thead>
+ <tbody>
 <% @items.each do |item| %>
   <tr class="<%= cycle('listing_even', 'listing_odd') %>">
+    <td>
+      <center>
+        <%= link_to(image_tag(item.photo.url(:thumb)), item) unless item.photo_file_name.blank? %>
+      </center>
+    </td>
     <td><%= link_to item.name, item %></td>
     <td><%=h item.category.name %></td>
     <td><%=h item.location.name %></td>
     <td><%=h item.room %></td>
     <td><%=h item.status %></td>
+    <td></td>
   </tr>
 <% end %>
+ </tbody>
 </table>
 
 <br />

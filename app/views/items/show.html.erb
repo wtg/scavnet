@@ -11,6 +11,7 @@
 </div> 
 <div class="indent_1"> 
   <div class="img_insert"> 
+  <%= image_tag @item.photo.url(:medium) unless @item.photo_file_name.nil? %>
   </div>
   <br />
   <br />

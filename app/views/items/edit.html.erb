@@ -1,6 +1,6 @@
 <h1>Editing item</h1>
 
-<% form_for(@item) do |f| %>
+<% form_for(@item, :html => { :multipart => true }) do |f| %>
   <%= f.error_messages %>
   <table class="edit_win" cellpadding="6" cellspacing="0">
       <%= render :partial => f %>

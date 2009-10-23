@@ -25,6 +25,8 @@ class ItemsController < ApplicationController
   # GET /items/new.xml
   def new
     @item = Item.new
+    @item.quantity = 1
+    @item.expiration = 10.days.from_now
 
     respond_to do |format|
       format.html # new.html.erb
