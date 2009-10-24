@@ -84,4 +84,19 @@ class ItemsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def search
+    if params[:query].blank?
+      items = Item.all
+    else
+      items = Item.find_with_index(params[:query])
+    end
+    if request.xhr?
+      render :partial => 'table', :locals => {:items => items}    
+    else
+      @items = items
+      render :action => 'index'
+    end
+  end
+
 end

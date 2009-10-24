@@ -9,7 +9,10 @@
       <td class="searchbox" width="45%">
         <h2>Live Search</h2>
         <div style="float:left; width:85%">
-          <form action="/scavnet" id="search" method="post"><input autocomplete="off" id="query" name="query" type="text" /> </form>
+         <% form_tag({:action=>:search}, :method => :get) do %>
+            <%= text_field_tag :query, params[:query] %>
+            <%= observe_field(:query, :url => {:action => :search}, :frequency => 0.25, :update => :main_table, :with => 'query') %>
+         <% end %>
         </div>
         <div style="float:right;text-align:left; width:15%;">
           <%= link_to_function(image_tag('cancel_sel.gif')) do |page|; page[:query].value = ''; end %>
@@ -26,38 +29,9 @@
     </tr>
   </table>
 </div>
-
-<table class="scav_listing sortable" cellpadding="0" cellspacing="0" width="100%">
-  <thead>
-  <tr>
-    <th></th>
-    <th>Name</th>
-    <th>Category</th>
-    <th>Location</th>
-    <th>Room</th>
-    <th>Status</th>
-    <th></th>
-  </tr>
- </thead>
- <tbody>
-<% @items.each do |item| %>
-  <tr class="<%= cycle('listing_even', 'listing_odd') %>">
-    <td>
-      <center>
-        <%= link_to(image_tag(item.photo.url(:thumb)), item) unless item.photo_file_name.blank? %>
-      </center>
-    </td>
-    <td><%= link_to item.name, item %></td>
-    <td><%=h item.category.name %></td>
-    <td><%=h item.location.name %></td>
-    <td><%=h item.room %></td>
-    <td><%=h item.status %></td>
-    <td></td>
-  </tr>
-<% end %>
- </tbody>
-</table>
-
+<div id="main_table">
+  <%= render :partial => 'table', :locals => {:items => @items} %>
+</div>
 <br />
 
 <%= link_to 'New item', new_item_path %>

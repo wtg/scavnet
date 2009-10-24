@@ -7,5 +7,6 @@ class Item < ActiveRecord::Base
                     :styles => { :medium => "200x200>",
                                  :thumb => "75x75>" }
 
+  acts_as_indexed :fields => [:name, :description, :pickup_details, :status]
 
 end

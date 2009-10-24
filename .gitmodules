@@ -4,3 +4,6 @@
 [submodule "vendor/plugins/authenticates_rpi"]
 	path = vendor/plugins/authenticates_rpi
 	url = git://github.com/mikldt/authenticates_rpi.git
+[submodule "vendor/plugins/acts_as_indexed"]
+	path = vendor/plugins/acts_as_indexed
+	url = git://github.com/dougal/acts_as_indexed.git
