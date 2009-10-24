@@ -15,7 +15,7 @@ body{font-family:Arial, sans-serif;font-size:small;line-height:1.75em;min-width:
 .innertube{margin:25px;}
 
 #headercell{background:#ccc;clear:both;height:250px;}
-#contentwrapper{background:#FFF url(../images/content_bg.gif) top left repeat-x;border-top:1px solid #FFF;float:left;width:100%;}
+#contentwrapper{background:#FFF top left repeat-x;border-top:1px solid #FFF;float:left;width:100%;}
 #contentwrapper_padding{padding:25px 0;}
 
 
