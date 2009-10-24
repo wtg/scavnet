@@ -11,7 +11,9 @@
         <div style="float:left; width:85%">
          <% form_tag({:action=>:search}, :method => :get) do %>
             <%= text_field_tag :query, params[:query] %>
-            <%= observe_field(:query, :url => {:action => :search}, :frequency => 0.25, :update => :main_table, :with => 'query') %>
+            <%= observe_field(:query, :url => {:action => :search}, 
+                              :frequency => 0.25, :update => :main_table,
+                              :with => 'query', :complete => 'TableKit.reload();') %>
          <% end %>
         </div>
         <div style="float:right;text-align:left; width:15%;">
@@ -33,5 +35,8 @@
   <%= render :partial => 'table', :locals => {:items => @items} %>
 </div>
 <br />
+<% content_for :script do %>
+  <%= javascript_include_tag 'tablekit' %>
+  <script type="text/javascript">Event.observe(window, 'load', function() {TableKit.Sortable.init('listings');});</script>
+<% end %>
 
-<%= link_to 'New item', new_item_path %>

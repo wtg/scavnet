@@ -1,4 +1,4 @@
-<table class="scav_listing sortable" cellpadding="0" cellspacing="0" width="100%">
+<table class="scav_listing" cellpadding="0" cellspacing="0" width="100%" id="listings">
   <thead>
   <tr>
     <th></th>
@@ -23,7 +23,10 @@
     <td><%=h item.location.name %></td>
     <td><%=h item.room %></td>
     <td><%=h item.status %></td>
-    <td></td>
+    <td>
+      <%= link_to 'Edit', edit_item_path(item) %> | 
+      <%= link_to 'Delete', item, :confirm => 'Are you sure?', :method => :delete %> 
+    </td>
   </tr>
 <% end %>
  </tbody>
