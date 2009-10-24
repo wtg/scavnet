@@ -3,15 +3,12 @@
     <h1><%= @item.name %> <span style="color:#cccccc; font-size:0.6em; font-weight:normal;">@</span> <%= @item.location.name %></h1> 
   </div> 
 </div> 
-<div class="header_sub"> 
- 
-<%= link_to 'Edit', edit_item_path(@item) %>
- 
- 
-</div> 
+<div class="header_sub">
+  <%= link_to 'Edit', edit_item_path(@item) %> 
+</div>
 <div class="indent_1"> 
   <div class="img_insert"> 
-  <%= image_tag @item.photo.url(:medium) unless @item.photo_file_name.nil? %>
+    <%= link_to image_tag(@item.photo.url(:medium)), image_path(@item.photo.url(:original)) unless @item.photo_file_name.nil? %>
   </div>
   <br />
   <br />

@@ -7,6 +7,7 @@
     <th>Location</th>
     <th>Room</th>
     <th>Status</th>
+    <th>Expires</th>
     <th></th>
   </tr>
  </thead>
@@ -23,6 +24,7 @@
     <td><%=h item.location.name %></td>
     <td><%=h item.room %></td>
     <td><%=h item.status %></td>
+    <td><%= item.expiration.strftime('%m/%d') %>
     <td>
       <%= link_to 'Edit', edit_item_path(item) %> | 
       <%= link_to 'Delete', item, :confirm => 'Are you sure?', :method => :delete %> 
