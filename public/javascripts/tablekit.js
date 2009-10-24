@@ -154,8 +154,8 @@ Object.extend(TableKit, {
 		autoLoad : true,
 		stripe : true,
 		sortable : true,
-		resizable : true,
-		editable : true,
+		resizable : false,
+		editable : false,
 		rowEvenClass : 'roweven',
 		rowOddClass : 'rowodd',
 		sortableSelector : ['table.sortable'],
@@ -235,7 +235,7 @@ Object.extend(TableKit, {
 	reloadTable : function(table){
 	  table = $(table);
 	  TableKit.unloadTable(table);
-	  var op = TableKit.option('sortable resizable editable', table.id);
+	  var op = TableKit.option('sortable', table.id);
 	  if(op.sortable) {TableKit.Sortable.init(table);}
 	  if(op.resizable) {TableKit.Resizable.init(table);}
 	  if(op.editable) {TableKit.Editable.init(table);}

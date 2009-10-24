@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.xml
   def index
-    @items = Item.all
+    @items = Item.find(:all, :conditions => ['expiration > ?', DateTime.now], :order => 'expiration ASC')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -87,9 +87,10 @@ class ItemsController < ApplicationController
 
   def search
     if params[:query].blank?
-      items = Item.all
+      items = Item.find(:all, :conditions => ['expiration > ?', DateTime.now], :order => 'expiration ASC')
     else
-      items = Item.find_with_index(params[:query])
+      all_items = Item.find_with_index(params[:query])
+      items = all_items.select{|i| i.expiration > DateTime.now}
     end
     if request.xhr?
       render :partial => 'table', :locals => {:items => items}    
