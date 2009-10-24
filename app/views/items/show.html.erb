@@ -15,11 +15,17 @@
   </div>
   <br />
   <br />
-  <h6>Description:</h6> 
-  <p><%=h @item.description %></p> 
-  <h6>Pick-up Details:</h6> 
-  <p><%=h @item.pickup_details %></p> 
+  <% if !@item.description.blank? %>
+    <h6>Description:</h6> 
+    <p><%=h @item.description %></p>
+  <% end %>
+  <% if !@item.pickup_details.blank? %>
+    <h6>Pick-up Details:</h6> 
+    <p><%=h @item.pickup_details %></p>
+  <% end %>
   <h6>Current Status: <span class="status"><%= @item.status %></span></h6> 
+  <h6>Location: <span class="location"><%= @item.location.name %> <%= @item.room unless @item.room.blank? %></span></h6> 
+  <h6>Expires: <span class="expires"><%= @item.expiration.strftime("%A, %B %d, %Y") %></span></h6>
   <h6>Contact E-mail: <span class="contact"><%= mail_to @item.user.email, nil, :replace_at => " AT ", :replace_dot => " DOT " %></span></h6> 
   <div class="item_footer"> 
     <div class="item_footer_padding"> 
