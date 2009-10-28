@@ -9,5 +9,5 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
   
   authenticate_rpi User, :username_field => 'rcsid', 
-    :admin_field => 'is_admin'
+    :admin_field => 'is_admin', :autoadd_users => true
 end
