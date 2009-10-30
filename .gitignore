@@ -6,5 +6,7 @@ db/*.sqlite3
 */.tmp_*
 */*/.tmp_*
 */*/*/.tmp_*
-config/webConf.rb
+config/intializers/webConf.rb
+config/intializers/ldap_initializer.rb
+config/intializers/cas_initializer.rb
 public/.htaccess
