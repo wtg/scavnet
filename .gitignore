@@ -1,4 +1,5 @@
 log/*.log
+tmp/
 tmp/**/*
 config/database.yml
 db/*.sqlite3
@@ -6,7 +7,7 @@ db/*.sqlite3
 */.tmp_*
 */*/.tmp_*
 */*/*/.tmp_*
-config/intializers/webConf.rb
-config/intializers/ldap_initializer.rb
-config/intializers/cas_initializer.rb
+config/initializers/webConf.rb
+config/initializers/ldap_initializer.rb
+config/initializers/cas_initializer.rb
 public/.htaccess
