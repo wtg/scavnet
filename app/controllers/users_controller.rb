@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  # Require user to be logged in before getting to critical pages.
+  # Actual authorization to edit or create will be checked later.
+  before_filter :logged_in_filter
+  
   # GET /users
   # GET /users.xml
   def index
