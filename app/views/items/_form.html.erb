@@ -38,7 +38,9 @@
         <td><h5><%= form.label :expiration %></h5><p>How long would you like this item to be listed?</p></td>
         <td><%= form.date_select :expiration %></td>
       </tr>
+<% if @item.allowed_to_write(:user_id) %>
       <tr>
-        <td><h5><%= form.label :user_id %></h5><p>Enter a text name for this listing.</p></td>
+        <td><h5><%= form.label :user_id %></h5><p>Choose the owner of this listing. <strong>Note: you can change the owner because you are an admin. Use with caution; only submit on someone else's behalf with their knowledge and when acting as an administrator.</strong></p></td>
         <td><%= form.collection_select :user_id, User.all, :id, :name %></td>
       </tr>
+<% end %>

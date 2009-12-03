@@ -1,20 +1,34 @@
 <h1>Listing locations</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-  </tr>
+<table class="scav_listing" cellpadding="0" cellspacing="0" id="locatoins">
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Items</th>
+      <th class="lastcol"></th>
+    </tr>
+  </thead>
+  <tbody>
 
 <% @locations.each do |location| %>
   <tr>
-    <td><%=h location.name %></td>
-    <td><%= link_to 'Show', location %></td>
-    <td><%= link_to 'Edit', edit_location_path(location) %></td>
-    <td><%= link_to 'Destroy', location, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to location.name, location %></td>
+    <td><%= location.items.count %></td>
+    <td class="lastcol">
+      <% if location.allowed_to_save %>
+        <%= link_to 'Edit', edit_location_path(location) %>
+      <% end %>
+      <% if location.allowed_to_destroy %>
+        <%= link_to 'Destroy', location, :confirm => 'Are you sure?', :method => :delete %>
+      <%end%>
+    </td>
   </tr>
 <% end %>
+  </tbody>
 </table>
 
 <br />
-
-<%= link_to 'New location', new_location_path %> | <%= link_to 'Home', root_url %>
+<% if Location.allowed_to_create %>
+  <%= link_to 'New location', new_location_path %> | 
+<% end %>
+<%= link_to 'Home', root_url %>

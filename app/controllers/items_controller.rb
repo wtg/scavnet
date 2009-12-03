@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
   # GET /items/1.xml
   def show
     @item = Item.find(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @item }
@@ -32,6 +32,12 @@ class ItemsController < ApplicationController
     @item.quantity = 1
     @item.expiration = 10.days.from_now
 
+    # The only effect of this line will be for admins: when adding a new
+    # item they get to change the user, although they will be the default.
+    # For everyone else, the user gets added at submissions.
+    # Note we know the user is logged in when they get here.
+    @item.user = current_user 
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @item }

@@ -3,9 +3,11 @@
     <h1><%= @item.name %> <span style="color:#cccccc; font-size:0.6em; font-weight:normal;">@</span> <%= @item.location.name %></h1> 
   </div> 
 </div> 
+<% if @item.allowed_to_save %>
 <div class="header_sub">
   <%= link_to 'Edit', edit_item_path(@item) %> 
 </div>
+<% end %>
 <div class="indent_1"> 
   <div class="img_insert"> 
     <%= link_to image_tag(@item.photo.url(:medium)), image_path(@item.photo.url(:original)) unless @item.photo_file_name.nil? %>

@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   # ruby-cas documentaiton.
   authenticate_rpi User, :username_field => 'rcsid', 
     :admin_field => 'is_admin', :autoadd_users => true,
-    :fullname_field => 'name',
+    :fullname_field => 'name', :sudo_enabled => true,
     :ldap_address => LDAP_ADDRESS, :ldap_port => LDAP_PORT,
     :ldap_dn => LDAP_DN
 end

@@ -18,7 +18,7 @@ class Item < ActiveRecord::Base
   authenticates_saves :with => :allow_owner
   authenticates_saves :with_accessor_method => :is_admin
 
-  authenticates_writes_to :owner_id, :with_accessor_method => :is_admin
+  authenticates_writes_to :user_id, :with_accessor_method => :is_admin
   authenticates_writes_to :is_admin, :with_accessor_method => :is_admin
 end
 

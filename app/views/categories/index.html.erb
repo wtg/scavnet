@@ -1,20 +1,35 @@
 <h1>Listing categories</h1>
 
-<table>
+<table class="scav_listing"  cellpadding="0" cellspacing="0" id="categories">
+  <thead>
   <tr>
     <th>Name</th>
+    <th>Items</th>
+    <th class="lastcol"></th>
   </tr>
+  </thead>
+  <tbody>
 
 <% @categories.each do |category| %>
   <tr>
-    <td><%=h category.name %></td>
-    <td><%= link_to 'Show', category %></td>
-    <td><%= link_to 'Edit', edit_category_path(category) %></td>
-    <td><%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to category.name, category %></td>
+    <td><%= category.items.count %></td>
+    <td class="lastcol">
+      <% if category.allowed_to_save %>
+        <%= link_to 'Edit', edit_category_path(category) %>
+      <% end %>
+      <% if category.allowed_to_destroy %> |
+        <%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %>
+      <% end %>
+    </td>
   </tr>
 <% end %>
+  </tbody>
 </table>
 
 <br />
+<% if Category.allowed_to_create %>
+  <%= link_to 'New category', new_category_path %> | 
+<% end %>
+<%= link_to 'Home', root_url %>
 
-<%= link_to 'New category', new_category_path %> | <%= link_to 'Home', root_url %>

@@ -12,6 +12,10 @@
     <%= f.text_field :name %>
   </p>
   <p>
+    <%= f.label :is_admin %><br />
+    <%= f.check_box :is_admin %>
+  </p>
+  <p>
     <%= f.submit 'Update' %>
   </p>
 <% end %>

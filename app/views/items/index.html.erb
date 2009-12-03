@@ -21,9 +21,18 @@
       </td>
       <td class="toplinks" width="55%">
         <ul>
-          <li><%= link_to 'Add Listing', new_item_path %></li>
-          <li><%= link_to 'Add Location', new_location_path %></li>
-          <li><%= link_to 'Add Category', new_category_path %></li>
+          <% if !logged_in? %>
+            <% alt="You will be asked to log in with your RPI ID to add an item." %>
+          <% else %>
+            <% alt="Click to add post your item on Scavnet!" %>
+          <% end %>
+          <li><%= link_to 'Add Listing', new_item_path, :title=>alt %></li>
+          <% if Location.allowed_to_create %>
+            <li><%= link_to 'Add Location', new_location_path %></li>
+          <% end %>
+          <%if Category.allowed_to_create %>
+            <li><%= link_to 'Add Category', new_category_path %></li>
+          <% end %>
         </ul>
       </td>
     </tr>
