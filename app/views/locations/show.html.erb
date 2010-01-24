@@ -3,7 +3,7 @@
   <%=h @location.name %>
 </p>
 
-<% if Location.allowed_to_save %>
+<% if @location.allowed_to_save %>
   <%= link_to 'Edit', edit_location_path(@location) %> |
 <% end %>
 <%= link_to 'Back to Locations', locations_path %> |
